@@ -214,8 +214,8 @@ export default function Navbar() {
           </Link>
 
           <Sheet>
-            <SheetTrigger>
-              <Button className="lg:hidden bg-[#0aad0a] hover:bg-[#059669] text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-sm ml-2">
+            <SheetTrigger className="lg:hidden">
+              <Button className="bg-[#0aad0a] hover:bg-[#059669] text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-sm ml-2">
                 <FiMenu size={20} />
               </Button>
             </SheetTrigger>
@@ -362,10 +362,10 @@ export default function Navbar() {
           </Sheet>
 
           {!isLoggedIn ? (
-            <Button className="bg-[#0aad0a] hover:bg-green-600 text-white px-5 py-5 rounded-full shadow-sm ml-2 cursor-pointer">
+            <Button className="hidden lg:flex bg-[#0aad0a] hover:bg-green-600 text-white px-5 py-5 rounded-full shadow-sm ml-2 cursor-pointer">
               <Link
                 href="/Login"
-                className="hidden lg:flex items-center gap-2 font-medium text-[15px]"
+                className="flex items-center gap-2 font-medium text-[15px]"
               >
                 <FiUser size={18} />
                 <span>Sign In</span>

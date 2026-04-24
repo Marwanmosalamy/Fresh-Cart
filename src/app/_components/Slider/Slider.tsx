@@ -4,7 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import Link from "next/link";
 export default function Slider({ 
   listOfImages, 
   heightclass 
@@ -72,12 +72,12 @@ export default function Slider({
                   </p>
 
                   <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4">
-                    <button className="bg-white text-green-700 font-bold py-2 px-5 sm:py-2.5 sm:px-7 md:py-3 md:px-10 text-sm md:text-base rounded-full shadow-md hover:bg-white/90 transition-all hover:scale-105">
+                    <Link href="/shop" className="bg-white text-green-700 font-bold py-2 px-5 sm:py-2.5 sm:px-7 md:py-3 md:px-10 text-sm md:text-base rounded-full shadow-md hover:bg-white/90 transition-all hover:scale-105 inline-block text-center">
                       {slideContent[index]?.buttonText1}
-                    </button>
-                    <button className="bg-transparent border-2 border-white text-white font-semibold py-2 px-5 sm:py-2.5 sm:px-7 md:py-3 md:px-10 text-sm md:text-base rounded-full hover:bg-white/10 transition-all hover:scale-105">
+                    </Link>
+                    <Link href="/shop" className="bg-transparent border-2 border-white text-white font-semibold py-2 px-5 sm:py-2.5 sm:px-7 md:py-3 md:px-10 text-sm md:text-base rounded-full hover:bg-white/10 transition-all hover:scale-105 inline-block text-center">
                       {slideContent[index]?.buttonText2}
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
