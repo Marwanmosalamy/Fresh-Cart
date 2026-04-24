@@ -7,9 +7,9 @@ import { decode } from "next-auth/jwt"
 export async function addToCart(productId: string) {
   const token = await getMyToken();
 
-  // if (!token) {
-  //   return { status: "error", message: "Please login first to add items to your cart" };
-  // }
+  if (!token) {
+    return { status: "error", message: "Please login first to add items to your cart" };
+  }
 
   const res = await fetch(`https://ecommerce.routemisr.com/api/v2/cart`, {
     method: "POST",
@@ -46,9 +46,9 @@ export async function getLoggedUserCart() {
 export async function updateProductQuantity(productId: string, count: number) {
   const token = await getMyToken();
 
-  // if (!token) {
-  //   throw new Error("Please Login First");
-  // }
+  if (!token) {
+    throw new Error("Please Login First");
+  }
 
   const res = await fetch(
     `https://ecommerce.routemisr.com/api/v2/cart/${productId}`,
@@ -69,9 +69,6 @@ export async function updateProductQuantity(productId: string, count: number) {
 export async function RemoveProductFromCart(productId: string) {
   const token = await getMyToken();
 
-  // if (!token) {
-  //   throw new Error("please Login First..");
-  // }
 
   const res = await fetch(
     `https://ecommerce.routemisr.com/api/v2/cart/${productId}`,

@@ -4,6 +4,9 @@ import { getMyToken } from "@/utilities";
 
 export async function AddProductToWishlist(productId: string) {
   const token = await getMyToken();
+    if (!token) {
+    return { status: "error", message: "Please login first" };
+  }
 
   if (!token) {
     return { status: "error", message: "Please login first" };
@@ -43,9 +46,7 @@ export async function getLoggedUserWishlist() {
 export async function RemoveProductFromWishlist(productId: string) {
   const token = await getMyToken();
 
-  if (!token) {
-    return { status: "error", message: "Please login first" };
-  }
+
 
   const res = await fetch(
     `https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`,
